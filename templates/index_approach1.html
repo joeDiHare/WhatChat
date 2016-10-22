@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <style type="text/css">
+    #share-buttons img {
+        width: 32px;
+        padding: 5px;
+        border: 0;
+        box-shadow: 0;
+        display: inline;
+    }    
+    body    {
+        padding-left: 5px;
+        padding-right: 5px;
+        color: black;
+        max-width: 450px;
+        text-align: center; 
+    }
+    ul {
+        margin: 10; 
+        padding-left: 10;
+    }
+    </style>
+    <title>Whatsapp Analysis ~ Stefano Cosentino 2016</title>
+</head>
+<body>
+    <h1>WhatChat 1.0</h1>
+    
+    <h1>This conversations has {{ no_users }} users:</h1>
+    <ul id="users">
+    {% for user in users %}
+        <li>{{user}}</li>
+    {% endfor %}
+    </ul>
+    
+    {# STAGE 1 #}
+    {% if 1 in do_stages%}
+    <h1>Who messaged the most?</h1>
+    <p> 
+        <img src="WhoMessagedTheMost.png" alt="Who messaged the most" style="width:250px;height:250px;"> 
+    </p>
+    <h2>Yeee, but how quickly did you respond tho.</h2>
+    <p> 
+        {% for u in range(0,no_users) %}
+        <p>The median reaction time for {{users[u]}} is {{UserRTmedian[u]}} minutes</p>
+        {% endfor %}
+    </p>
+    <h2>And, if you care about who started first the conversation...</h2>
+    <p> 
+        {% for u in range(0,no_users) %}
+        <p>{{users[u]}} started a conversation {{FM_users[u]}} % of the times.</p>
+        {% endfor %}
+    </p>
+    {% endif %}
+
+    {# STAGE 2 #}
+    {% if 2 in do_stages%}
+    <h1>Who sent more media files?</h1>
+    <p> 
+        {% for u in range(0,no_users) %}
+        <p>{{users[u]}} sent {{MsgCountUsr[u]}} messages and {{MediaCountUsr[u]}} photos/videos.</p>
+        {% endfor %}
+    </p>
+    <p> 
+    <img src="WhoSentMoreMedia.png" alt="Media Dsitribution" style="width:300px;height:250px;"> </p>
+    {% endif %}
+
+
+    {# STAGE 3 [Wordles] #}
+    {% if 3 in do_stages%}
+    <h1>Distribution of words</h1>
+    {% for u in range(0,no_users) %}
+    <p>{{users[u]}}:
+    <img src="{{users[u]}}_wordle.png" alt="wordle for {{users[u]}}" style="width:500px;height:500px;"> 
+    </p> 
+    {% endfor %}
+    {% endif %}
+    
+    {# STAGE 4 #}
+    {% if 4 in do_stages%}
+    <h1>JINX</h1>
+    <p> 
+        {% for u in range(0,no_users) %}
+        <p>
+            {{users[u]}} jinxed first {{jinxNo[u]}} times
+        </p>
+        {% endfor %}
+    </p>
+    {% endif %}
+
+    {# STAGE 5 #}
+    {% if 5 in do_stages%}
+    <h1>The big L</h1>
+    <p> 
+        {% for u in range(0,no_users) %}
+        <p>
+            {{users[u]}} used the word 'love' {{noLove[u]}} times, and said 'I love you' {{noIloveU[u]}} times, but also 'I hate you' {{noHateU[u]}} times.
+        </p>
+        {% endfor %}
+    </p>
+    <h1>Messaging Trend</h1>
+    <p> 
+        <img src="sender_per_month.png" alt="Which month" style="width:500px;height:300px;"> 
+    </p> 
+    {% endif %}
+
+    {# STAGE 5b #}
+    {% if 5 in do_stages%}
+    <h1>Who is more into the other person?</h1>
+    <h3>Based on a million year research based on the use of stretched words has concluded that</h3>
+    
+	<p>And to be precise:</p>
+    <p> 
+        {% for u in range(0,no_users) %}
+        <p> {{users[u]}} stretched words {{CountStretchedWrdsRatio[u]}} % of the times with things like:</p>
+        <p> " {{StretchedWordsUsr[u]}} ".</p>
+        {% endfor %}
+    </p>
+    {% endif %}
+
+
+    {# STAGE 5c #}
+    {% if 5 in do_stages%}
+    {% if good_night[0]>0%}
+    <h3>{% for u in range(0,no_users) %}
+        <p> {{users[u]}} said 'good night' {{good_night[u]}} times.</p>
+        {% endfor %} 
+    </h3>
+    {% endif %}
+    {% endif %}
+
+
+    {# STAGE 6 [What days message more] #}
+    {% if 6 in do_stages%}
+    <h1>When does it get crazy hot?</h1>
+    <p> 
+        <img src="weekdays.png" alt="Messages per day" style="width:500px;height:400px;"> 
+    </p> 
+    {% endif %}
+
+    {# STAGE 7 [What days message more] #}
+    {% if 7 in do_stages%}
+    <h1>Night owl or morning person?</h1>
+    <p> 
+        <img src="dayshour.png" alt="Which hours" style="width:500px;height:300px;"> 
+    </p> 
+    {% endif %}
+
+    {# STAGE 8 [What days message more] #}
+    {% if 8 in do_stages%}
+    <h1>Over the whole year...</h1>
+    <p> 
+        <img src="message_distribution.png" alt="Messages per day" style="width:500px;height:200px;"> 
+    </p> 
+    {% endif %}
+
+    {# STAGE 9 [What days message more] #}
+    {% if 9 in do_stages%}
+    <h1>Favourite expressions</h1>
+    <p> 
+        Put your content here...
+
+    <ul id="users">
+    {% for u in range(0,no_users) %}
+    <div style='float:left; width: 40%; margin-left:30px'>
+    <b>{{users[u]}}</b>
+    <ol>
+    {% for n in range(0, lensGrams[u]) %}
+    <li type="square">{{ngramsUsr[u][n]}}</li>
+    {% endfor %}
+    </ol>
+    </div>
+
+    {% endfor %}
+    </ul>
+    </p> 
+    {% endif %}
+
+
+    <p>    </p>
+
+
+    <div id="share-buttons">
+        <!-- Twitter -->
+    <a href="https://twitter.com/share?url=https://stefanocosentino.com" target="_blank">
+        <img src="twitter_icon.png" alt="Twitter" />
+    </a>
+    <a href="http://www.facebook.com/sharer.php?u=https://stefanocosentino.com" target="_blank">
+        <img src="facebook_icon.png" alt="Facebook" />
+    </a>
+    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://stefanocosentino.com" target="_blank">
+        <img src="mail_icon.png" alt="Mail" />
+    </a>
+    <a href="http://reddit.com/submit?url=https://stefanocosentino.com" target="_blank">
+        <img src="reddit_icon.png" alt="Reddit" />
+    </a>
+    <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+        <img src="pinterest_icon.png" alt="Pinterest" />
+    </a>
+
+    </div>
+
+    
+</body>
+</html>
