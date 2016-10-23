@@ -605,26 +605,28 @@ for user in users:
     JokeCrakers.append(JokeMade[user])
     print(user + ' made ' + str(JokeMade[user]) + ' jokes that received a laugh.')
 TotLaughs = sum(JokeCrakers)
-JokePerMsg = round(100*TotLaughs/len(ConvBody),1)
-print('There was a total of '+ str(TotLaughs) +' jokes, which amounts to '+str(JokePerMsg)+'% of the conversations.')
+JokePerMsgPerc = round(100*TotLaughs/len(ConvBody),1)
+print('There was a total of '+ str(TotLaughs) +' jokes, which amounts to '+str(JokePerMsgPerc)+'% of the conversations.')
 
+JokeCrakers_best = [users[JokeCrakers.index(max(JokeCrakers))], max(JokeCrakers)]
 # OutputPdf.close()
 
 
 # Render html file
 env = Environment(loader=FileSystemLoader('templates'))
-name_templ_html = 'index_approach1.html'
+# name_templ_html = 'index_approach1.html'
 name_templ_html = 'index_approach2.html'
 template = env.get_template(name_templ_html)
-output_from_parsed_template = template.render(no_users=len(users), do_stages=do_stages, users=users,
-                                              UserRTmedian=UserRTmedian, FM_users=FM_users,
-                                              MsgCountUsr=MsgCountUsr,MediaCountUsr=MediaCountUsr,
-                                              jinxNo=jinxNo,
-                                              noLove=noLove,noIloveU=noIloveU,noHateU=noHateU,
-                                              ngramsUsr=ngramsUsr, lensGrams=lensGrams,
-                                              CountStretchedWrdsRatio=CountStretchedWrdsRatio,StretchedWordsUsr=StretchedWordsUsr,
-                                              happy_bday=happy_bday,happy_anniv=happy_anniv,good_night=good_night,
-                                              JokeCrakers=JokeCrakers,TotLaughs=TotLaughs,JokePerMsg=JokePerMsg)
+output_from_parsed_template = template.render(
+    no_users=len(users), do_stages=do_stages, users=users,
+    UserRTmedian=UserRTmedian, FM_users=FM_users,
+    MsgCountUsr=MsgCountUsr,MediaCountUsr=MediaCountUsr,
+    jinxNo=jinxNo,
+    noLove=noLove,noIloveU=noIloveU,noHateU=noHateU,
+    ngramsUsr=ngramsUsr, lensGrams=lensGrams,
+    CountStretchedWrdsRatio=CountStretchedWrdsRatio,StretchedWordsUsr=StretchedWordsUsr,
+    happy_bday=happy_bday,happy_anniv=happy_anniv,good_night=good_night,
+    JokeCrakers=JokeCrakers,JokeCrakers_best=JokeCrakers_best,TotLaughs=TotLaughs,JokePerMsgPerc=JokePerMsgPerc)
 # to save the results
 with open("OutputAnalysis.html", "w") as fh:
     fh.write(output_from_parsed_template)

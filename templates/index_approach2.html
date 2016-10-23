@@ -177,11 +177,21 @@
     </ul>
     </p>
     {% endif %}
-
-
     <p>    </p>
-
     <div></div>
+
+
+    {# STAGE 10 [Who is the funny one] #}
+    {% if 10 in do_stages%}
+    <h1>Who is the funny one?</h1>
+    <p>
+    <h2>{{JokeCrakers_best[0]}}</h2>
+    </p>
+    <p>
+    {{JokeCrakers_best[0]}} made {{JokeCrakers_best[1]}} jokes
+    </p>
+    {% endif %}
+
     <div id="share-buttons"; style='float:center; width: 100%'>
         <!-- Twitter -->
     <a href="https://twitter.com/share?url=https://stefanocosentino.com" target="_blank">

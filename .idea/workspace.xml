@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cecda3a-2e33-4522-a857-8c5ac2b8fed6" name="Default" comment="" />
+    <list default="true" id="5cecda3a-2e33-4522-a857-8c5ac2b8fed6" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Antonio Guerrazzi_wordle.png" afterPath="$PROJECT_DIR$/Antonio Guerrazzi_wordle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Enrico greco chef_wordle.png" afterPath="$PROJECT_DIR$/Enrico greco chef_wordle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Low_wordle.png" afterPath="$PROJECT_DIR$/Low_wordle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WhoMessagedTheMost.png" afterPath="$PROJECT_DIR$/WhoMessagedTheMost.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WhoSentMoreMedia.png" afterPath="$PROJECT_DIR$/WhoSentMoreMedia.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alberto ascione_wordle.png" afterPath="$PROJECT_DIR$/alberto ascione_wordle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dayshour.png" afterPath="$PROJECT_DIR$/dayshour.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sender_per_month.png" afterPath="$PROJECT_DIR$/sender_per_month.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stefano cosentino_wordle.png" afterPath="$PROJECT_DIR$/stefano cosentino_wordle.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OutputAnalysis.html" afterPath="$PROJECT_DIR$/OutputAnalysis.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WhatChat_v2.py" afterPath="$PROJECT_DIR$/WhatChat_v2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index_approach2.html" afterPath="$PROJECT_DIR$/templates/index_approach2.html" />
+    </list>
     <ignored path="WhatChat.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +37,8 @@
       <file leaf-file-name="WhatChat_v2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WhatChat_v2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="610" column="19" selection-start-line="610" selection-start-column="19" selection-end-line="610" selection-end-column="19" />
+            <state relative-caret-position="138">
+              <caret line="628" column="111" selection-start-line="628" selection-start-column="111" selection-end-line="628" selection-end-column="111" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -293,8 +307,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -326,8 +340,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/WhatChat_v2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="610" column="19" selection-start-line="610" selection-start-column="19" selection-end-line="610" selection-end-column="19" />
+        <state relative-caret-position="138">
+          <caret line="628" column="111" selection-start-line="628" selection-start-column="111" selection-end-line="628" selection-end-column="111" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
