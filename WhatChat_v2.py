@@ -238,12 +238,11 @@ if 2 in do_stages:
         print(user+' sent '+str(MsgCountUsr[u])+' messages and '+str(MediaCountUsr[u])+' images/videos.')
 
 # MOST COMMON N WORDS PER USER
-circle_mask = np.array(Image.open("circle-mask.png"))
 # stwords = set(STOPWORDS)
 # stwords.add("said")
 # if 3 in do_stages: #  dep on stage 1 and 2
 # script to read-in strop words
-filename = 'stopwords_' + Language + '.txt'; stopwords = []
+filename = 'stopwords/stopwords_' + Language + '.txt'; stopwords = []
 with open(filename, newline='',encoding='UTF8') as inputfile:
     for row in csv.reader(inputfile):
         stopwords.append(row[0].lower())
@@ -261,8 +260,10 @@ for u in range(0,len(users)):
 
     #Wordles
     text_user = ' '.join(bodyUsr[u]).lower()
+    letter_mask = users[u][0].upper() if users[u][0].lower() in 'qwertyuiopasdfghjklzxcvbnm' else 'circle'
+    mask_wordle = np.array(Image.open("res/"+ letter_mask +"-mask.png"))
     wc = WordCloud(max_font_size=40, relative_scaling=.5, background_color="white",
-                   max_words=50, stopwords=set(stopwords), mask=circle_mask).generate(text_user)#mask=alice_mask,
+                   max_words=50, stopwords=set(stopwords), mask=mask_wordle).generate(text_user)#mask=alice_mask,
     fig3 = plt.figure(figsize=(5,5))
     plt.imshow(wc)
     plt.axis("off")
@@ -520,7 +521,7 @@ if 8 in do_stages:
 # most common 3-word sentences
 TARGET = ['good night', 'happy birthday', 'happy anniversary']
 # script to read-in strop words
-filename = 'stopwords_3_words.txt'; stopwords3 = []
+filename = 'stopwords/stopwords_3_words.txt'; stopwords3 = []
 with open(filename, newline='', encoding='UTF8') as inputfile:
     for row in csv.reader(inputfile):
         stopwords3.append(row[0].lower())
@@ -579,8 +580,7 @@ if 9 in do_stages: # depend on stage 3
         # ngramsUsr.append(ngrams)
         # print(users[u] + "'s favourite expressions are: " + ' | '.join([k for k in ngramsUsr[u]]) + ';')
 
-
-    # Laughter analysis
+# Laughter analysis
 if 10 in do_stages:
     LaughterUsr = []
     for u in range(0,len(users)):
@@ -619,7 +619,6 @@ if 10 in do_stages:
     # OutputPdf.savefig(fig2b)
     plt.close()
 
-
 # Render html file
 env = Environment(loader=FileSystemLoader('templates'))
 # name_templ_html = 'index_approach1.html'
@@ -640,7 +639,7 @@ with open("OutputAnalysis.html", "w") as fh:
     fh.write(output_from_parsed_template)
 
 os.system("open OutputAnalysis.html")
-#
+
 # import pdfkit
 # with open('OutputAnalysis.html') as f:
 #     pdfkit.from_file(f, 'out.pdf')
