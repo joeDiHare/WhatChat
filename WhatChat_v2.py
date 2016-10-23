@@ -270,10 +270,6 @@ for u in range(0,len(users)):
     # OutputPdf.savefig(fig3)
     plt.close()
 
-# for n in range(0,len(body)):
-#     if ind[0][n] == True:
-#         print(sender[n]+','+body[n])
-
 # COUNT STRETCHED WORDS
 CountStretchedWrds, StretchedWordsUsr, CountStretchedWrdsRatio = [],[],[]
 for u in range(0,len(users)):
@@ -584,32 +580,44 @@ if 9 in do_stages: # depend on stage 3
         # print(users[u] + "'s favourite expressions are: " + ' | '.join([k for k in ngramsUsr[u]]) + ';')
 
 
-# Laughter analysis
-LaughterUsr = []
-for u in range(0,len(users)):
-    all_words = ' '.join(bodyUsr[u]).split()
-    hah = [word for word in all_words if 'hah' in word.lower()]
-    LaughterUsr.append([len(hah), len(hah)/len(all_words), len(max(hah, key=len))])
-    print(users[u] + ' laughed '+str(LaughterUsr[u][0])+' times (every '+str(round(1/LaughterUsr[u][1]))+' words). '
-                     'The longest laugh required ' + str(LaughterUsr[u][2])+' characters!')
-JokeCrakers = []
-for n in range(0,len(ConvBody)):
-    if 'haha' in ConvBody[n]:
-        if ConvSender[n-1]!=ConvSender[n]:
-            JokeCrakers.append(ConvSender[n-1])
-        # print(ConvSender[n-1] + ' joked saying: ' + ConvBody[n-1] +
-        #       '; and ' + ConvSender[n] + ' responded laughing ('+ ConvBody[n] + ')')
-JokeMade = Counter(JokeCrakers)
-JokeCrakers = []
-for user in users:
-    JokeCrakers.append(JokeMade[user])
-    print(user + ' made ' + str(JokeMade[user]) + ' jokes that received a laugh.')
-TotLaughs = sum(JokeCrakers)
-JokePerMsgPerc = round(100*TotLaughs/len(ConvBody),1)
-print('There was a total of '+ str(TotLaughs) +' jokes, which amounts to '+str(JokePerMsgPerc)+'% of the conversations.')
+    # Laughter analysis
+if 10 in do_stages:
+    LaughterUsr = []
+    for u in range(0,len(users)):
+        all_words = ' '.join(bodyUsr[u]).split()
+        hah = [word for word in all_words if 'hah' in word.lower()]
+        LaughterUsr.append([len(hah), len(hah)/len(all_words), len(max(hah, key=len))])
+        print(users[u] + ' laughed '+str(LaughterUsr[u][0])+' times (every '+str(round(1/LaughterUsr[u][1]))+' words). '
+                         'The longest laugh required ' + str(LaughterUsr[u][2])+' characters!')
+    JokeCrakers = []
+    for n in range(0,len(ConvBody)):
+        if 'haha' in ConvBody[n]:
+            if ConvSender[n-1]!=ConvSender[n]:
+                JokeCrakers.append(ConvSender[n-1])
+            # print(ConvSender[n-1] + ' joked saying: ' + ConvBody[n-1] +
+            #       '; and ' + ConvSender[n] + ' responded laughing ('+ ConvBody[n] + ')')
+    JokeMade = Counter(JokeCrakers)
+    JokeCrakers = []
+    for user in users:
+        JokeCrakers.append(JokeMade[user])
+        print(user + ' made ' + str(JokeMade[user]) + ' jokes that received a laugh.')
+    TotLaughs = sum(JokeCrakers)
+    JokePerMsgPerc = round(100*TotLaughs/len(ConvBody),1)
+    print('There was a total of '+ str(TotLaughs) +' jokes, which amounts to '+str(JokePerMsgPerc)+'% of the conversations.')
 
-JokeCrakers_best = [users[JokeCrakers.index(max(JokeCrakers))], max(JokeCrakers)]
-# OutputPdf.close()
+    JokeCrakers_best = [users[JokeCrakers.index(max(JokeCrakers))], max(JokeCrakers)]
+
+    fig10 = plt.figure(figsize=(6,4))
+    ax = plt.subplot(111)
+    plt.bar(range(0,len(users)),JokeCrakers, width=.5, color=['g','k'])
+    ax.set_xlim(0-.5, len(users))
+    ax.set_xticks(range(0,len(users)))
+    ax.set_xticklabels(users)
+    # plt.title("Who make more funny jokes")
+    plt.ylabel("Number of jokes")
+    fig10.savefig('WhoMadeMoreJokes.png')
+    # OutputPdf.savefig(fig2b)
+    plt.close()
 
 
 # Render html file
