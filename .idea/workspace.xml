@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5cecda3a-2e33-4522-a857-8c5ac2b8fed6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/aws-lambdas" afterPath="$PROJECT_DIR$/aws-lambdas" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev-algorithm" afterPath="$PROJECT_DIR$/dev-algorithm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wotchat-proj" afterPath="$PROJECT_DIR$/wotchat-proj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WhatChat.iml" afterPath="$PROJECT_DIR$/.idea/WhatChat.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WhatChat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,19 +27,35 @@
       <file leaf-file-name="wotchat_analyse.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aws-lambdas/wotchat_analyse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="315">
+              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+              <folding>
+                <element signature="e#25#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload_to_lambda.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lambda_function.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/aws-lambdas/lambda_function.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="93" column="56" selection-start-line="93" selection-start-column="56" selection-end-line="93" selection-end-column="56" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload_to_lambda.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aws-lambdas/upload_to_lambda.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1058">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="360">
+              <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+              <folding>
+                <element signature="e#19#36#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,6 +81,7 @@
         <option value="$PROJECT_DIR$/wotchatsite/showdata/urls.py" />
         <option value="$PROJECT_DIR$/wotchatsite/wotchatsite/urls.py" />
         <option value="$PROJECT_DIR$/aws-lambdas/upload_to_lambda.py" />
+        <option value="$PROJECT_DIR$/aws-lambdas/lambda_function.py" />
       </list>
     </option>
   </component>
@@ -140,7 +157,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/aws-lambdas/upload_to_lambda.py" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -157,12 +174,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aws-lambdas" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="WhatChat" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WhatChat_v2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aws-lambdas/upload_to_lambda.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -443,17 +460,31 @@
     <entry file="file://$PROJECT_DIR$/wotchatsite/showdata/models.py" />
     <entry file="file://$PROJECT_DIR$/aws-lambdas/wotchat_analyse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding>
+            <element signature="e#25#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aws-lambdas/upload_to_lambda.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1058">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+          <folding>
+            <element signature="e#19#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aws-lambdas/lambda_function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="93" column="56" selection-start-line="93" selection-start-column="56" selection-end-line="93" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
